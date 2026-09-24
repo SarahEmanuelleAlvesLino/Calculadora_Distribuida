@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+// Gera cada mensagem como uma classe Java separada, no pacote "calculadora"
+// (o mesmo pacote das nossas classes ServidorGRPC/ClienteGRPC, pra não
+// precisar de imports).
+option java_multiple_files = true;
+option java_package = "calculadora";
+option java_outer_classname = "CalculadoraProto";
+
+package calculadora;
+
+// Este é o CONTRATO da aplicação — a peça central do gRPC.
+// A partir deste arquivo, o build gera automaticamente:
+//   - as classes de mensagem (OperacaoRequest / OperacaoResponse);
+//   - a classe CalculadoraGrpc, com a base do servidor e o "stub" do cliente.
+// Repare que este contrato é neutro de linguagem: o mesmo .proto poderia
+// gerar código para Python, Go, C++, etc.
+service Calculadora {
+  rpc Soma (OperacaoRequest) returns (OperacaoResponse);
+  rpc Sub  (OperacaoRequest) returns (OperacaoResponse);
+  rpc Mul  (OperacaoRequest) returns (OperacaoResponse);
+  rpc Div  (OperacaoRequest) returns (OperacaoResponse);
+}
+
+// Mensagem enviada pelo cliente: os dois operandos.
+message OperacaoRequest {
+  double a = 1;
+  double b = 2;
+}
+
+// Mensagem devolvida pelo servidor: o resultado.
+message OperacaoResponse {
+  double resultado = 1;
+}
