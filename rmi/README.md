@@ -2,7 +2,7 @@
 
 Terceira versão da atividade. A mesma calculadora cliente-servidor, agora com
 **RMI**: o cliente invoca **métodos de um objeto remoto** quase como se ele
-fosse local. É o maior nível de abstração das três versões.
+fosse local. É o maior nível de abstração das três versões...
 
 ## Arquitetura
 
