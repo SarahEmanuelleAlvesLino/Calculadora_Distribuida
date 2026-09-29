@@ -6,7 +6,7 @@ fosse local. É o maior nível de abstração das três versões.
 
 ## Arquitetura
 
-```
+
    Cliente                         RMI Registry                  Servidor
  ┌──────────┐   1. lookup("CalculadoraRMI")   ┌───────────┐
  │ ClienteRMI│ ───────────────────────────────►│  registro │
