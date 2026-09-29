@@ -6,8 +6,8 @@ cliente-servidor) implementada em **três versões**, para comparar as abordagen
 | Versão   | Tecnologia            | Status        |
 |----------|-----------------------|---------------|
 | 1        | Sockets (TCP)         | ✅ pronta     |
-| 2        | RPC (gRPC em Java)    | ⬜ a fazer    |
-| 3        | RMI (Java RMI)        | ⬜ a fazer    |
+| 2        | RPC (gRPC em Java)    | ✅ pronta     |
+| 3        | RMI (Java RMI)        | ✅ pronta     |
 
 A aplicação é a mesma nas três: o cliente pede uma operação (`soma`, `sub`,
 `mul`, `div`) com dois operandos e o servidor devolve o resultado. O que muda é
